@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Widget</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell" aria-labelledby="app-title">
+    <section class="widget" aria-label="番茄钟专注小组件">
+      <header class="widget-header">
+        <div>
+          <p class="eyebrow">Focus Widget</p>
+          <h1 id="app-title">Pomodoro</h1>
+        </div>
+        <div id="completedCount" class="completion-pill">今日完成 0 次</div>
+      </header>
+
+      <div class="mode-switch" aria-label="模式切换">
+        <button class="mode-button is-active" type="button" data-mode="focus">专注</button>
+        <button class="mode-button" type="button" data-mode="short">短休息</button>
+        <button class="mode-button" type="button" data-mode="long">长休息</button>
+      </div>
+
+      <div class="timer-stage" aria-live="polite">
+        <div class="stem stem-left"></div>
+        <div class="stem stem-center"></div>
+        <div class="stem stem-right"></div>
+
+        <div class="tomato">
+          <svg class="progress-ring" viewBox="0 0 260 260" aria-hidden="true">
+            <circle class="progress-track" cx="130" cy="130" r="116"></circle>
+            <circle id="progressCircle" class="progress-value" cx="130" cy="130" r="116"></circle>
+          </svg>
+          <div class="shine"></div>
+          <div class="timer-content">
+            <span id="modeLabel" class="mode-label">专注</span>
+            <span id="timeDisplay" class="time">25:00</span>
+          </div>
+        </div>
+      </div>
+
+      <p id="statusText" class="status">准备开始</p>
+
+      <div class="controls" aria-label="计时器控制">
+        <button id="startButton" class="primary-action" type="button">开始</button>
+        <button id="pauseButton" class="secondary-action" type="button">暂停</button>
+        <button id="resetButton" class="secondary-action" type="button">重置</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
